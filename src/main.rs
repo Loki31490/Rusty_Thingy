@@ -29,7 +29,7 @@ impl App for MteToolBox {
             quantity: 26,
             in_stock: true,
         };
-        //
+        //MENU BAR FOR ADVANCED OPTIONS
         egui::TopBottomPanel::top("top_panel0")
             .resizable(false)
             .show(ctx, |ui| {
@@ -78,8 +78,8 @@ impl App for MteToolBox {
             });
         });
         //
-        //
-        SidePanel::left("left_panel")
+        //SIDE MENU FOR ACCESS DIFFERENT TOOLS WIDGETS
+        SidePanel::right("left_panel")
             .resizable(true)
             .default_width(150.0)
             .width_range(80.0..=200.0)
@@ -94,23 +94,21 @@ impl App for MteToolBox {
                 });
             });
         //
-        //MUST BE THE LAST ONE !
         //CENTRAL PANEL
-        //here will be the main window to interact
+        //--- MUST BE THE LAST ONE ! ---
+        //here wilL be displayed all widgets tools thats selected in the side menu in a window
         CentralPanel::default().show(ctx, |ui| {
             // VERTICAL CENTERED
             ui.vertical_centered(|ui| {
                 ui.heading("Centered Header");
             });
             //
-            Window::new("Transmetteur Vidéo")
-                .collapsible(false)
-                .show(ctx, |ui| {
-                    ui.label(format!("{product_mte}"));
-                    if ui.button("export JSON").clicked() {
-                        println!("{product_mte}")
-                    }
-                });
+            Window::new("Transmetteur Vidéo").show(ctx, |ui| {
+                ui.label(format!("{product_mte}"));
+                if ui.button("export JSON").clicked() {
+                    println!("{product_mte}")
+                }
+            });
             //
         });
         //
@@ -123,7 +121,7 @@ fn main() {
     run_native(
         "MteToolBox",
         win_option,
-        Box::new(|cc: &eframe::CreationContext<'_>| Ok(Box::new(MteToolBox::new(cc)))),
+        Box::new(|cc| Ok(Box::new(MteToolBox::new(cc)))),
     )
     .unwrap(); //NEED TO MANAGE THIS ERROR BETTER
 }
