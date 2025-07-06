@@ -79,19 +79,18 @@ impl App for MteToolBox {
         });
         //
         //SIDE MENU FOR ACCESS DIFFERENT TOOLS WIDGETS
-        SidePanel::right("left_panel")
+        SidePanel::left("side_panel")
             .resizable(true)
             .default_width(150.0)
             .width_range(80.0..=200.0)
             .show(ctx, |ui| {
                 ui.vertical_centered(|ui| {
-                    ui.heading("Left Panel");
+                    ui.heading("Side Menu");
                 });
-                egui::ScrollArea::vertical().show(ui, |ui| {
-                    ui.vertical_centered(|ui| {
-                        ui.heading("Centered Header");
-                    })
-                });
+                /*
+                TODO
+                ADD ALL THE BUTTONS FOR ACCESS ALL THE TOOLS WIDGETS HERE
+                */
             });
         //
         //CENTRAL PANEL
