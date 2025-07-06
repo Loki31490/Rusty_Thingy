@@ -37,34 +37,34 @@ impl App for MteToolBox {
                     /**/
                     ui.menu_button("File", |ui| {
                         if ui.button("Save").clicked() {
-                            println!("Save button clicked !")
+                            todo!()
                         }
                         if ui.button("Quit").clicked() {
-                            println!("Quit button clicked !")
+                            todo!()
                         }
                     });
                     /**/
                     ui.menu_button("Edit", |ui| {
                         if ui.button("Cut").clicked() {
-                            println!("Save button clicked !")
+                            todo!()
                         }
                         if ui.button("Copy").clicked() {
-                            println!("Copy button clicked !")
+                            todo!()
                         }
                         if ui.button("Paste").clicked() {
-                            println!("Paste button clicked !")
+                            todo!()
                         }
                     });
                     /**/
                     ui.menu_button("Database", |ui| {
                         if ui.button("Connect").clicked() {
-                            println!("Connect button clicked !")
+                            todo!()
                         }
                         if ui.button("Manage").clicked() {
-                            println!("Manage button clicked !")
+                            todo!()
                         }
                         if ui.button("History").clicked() {
-                            println!("History button clicked !")
+                            todo!()
                         }
                     });
                     /**/
@@ -88,9 +88,23 @@ impl App for MteToolBox {
                     ui.heading("Side Menu");
                 });
                 /*
-                TODO
                 ADD ALL THE BUTTONS FOR ACCESS ALL THE TOOLS WIDGETS HERE
                 */
+                if ui.button("Transmetteur Vidéo").clicked() {
+                    todo!()
+                }
+                if ui.button("Cartes SIM").clicked() {
+                    todo!()
+                }
+                if ui.button("Stock").clicked() {
+                    todo!()
+                }
+                if ui.button("Magasin").clicked() {
+                    todo!()
+                }
+                if ui.button("SAV").clicked() {
+                    todo!()
+                }
             });
         //
         //CENTRAL PANEL
