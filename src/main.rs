@@ -108,6 +108,9 @@ impl App for MteToolBox {
                 if ui.button("SAV").clicked() {
                     todo!()
                 }
+                if ui.button("Utilisateurs").clicked() {
+                    todo!()
+                }
             });
         //
         //CENTRAL PANEL
@@ -119,12 +122,11 @@ impl App for MteToolBox {
                 ui.heading("Centered Header");
             });
             //
-            Window::new("Transmetteur Vidéo").show(ctx, |ui| {
-                ui.label(format!("{product_mte}"));
-                if ui.button("export JSON").clicked() {
-                    println!("{product_mte}")
-                }
-            });
+            ui.label(format!("{product_mte}"));
+            Window::new("Stock")
+                .resizable(true)
+                .collapsible(true)
+                .show(ctx, |ui| ui.spinner());
             //
             ui.label("Drag-and-drop files onto the window!");
 
