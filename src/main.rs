@@ -115,7 +115,7 @@ impl App for MteToolBox {
         //
         //CENTRAL PANEL
         //--- MUST BE THE LAST ONE ! ---
-        //here wilL be displayed all widgets tools thats selected in the side menu in a window
+        //here wilL be displayed all the widgets tools thats selected in the side menu in a window
         CentralPanel::default().show(ctx, |ui| {
             // VERTICAL CENTERED
             ui.vertical_centered(|ui| {
