@@ -1,3 +1,4 @@
+use egui::{Button, Ui};
 use rust_decimal::Decimal;
 use std::fmt;
 
@@ -17,5 +18,29 @@ impl fmt::Display for ProductMte {
             "id: {}\nmanufaturer: {}\nname: {}\nprice: {}\nquantity: {}\nin_stock: {}\n",
             self.id, self.manufacturer, self.name, self.price, self.quantity, self.in_stock
         )
+    }
+}
+
+pub struct MyButton {
+    text: String,
+    enabled: bool,
+}
+
+impl MyButton {
+    pub fn new(text: &str) -> Self {
+        Self {
+            text: text.to_string(),
+            enabled: true,
+        }
+    }
+
+    pub fn disabled(mut self) -> Self {
+        self.enabled = false;
+        self
+    }
+
+    pub fn show(self, ui: &mut Ui) -> bool {
+        ui.add_enabled(self.enabled, Button::new(self.text))
+            .clicked()
     }
 }

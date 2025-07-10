@@ -4,6 +4,8 @@ use egui::{CentralPanel, SidePanel, Window, menu};
 use modules::ProductMte;
 use rust_decimal::prelude::*;
 
+use crate::modules::MyButton;
+
 #[derive(Default)]
 struct MteToolBox {
     dropped_files: Vec<egui::DroppedFile>,
@@ -70,7 +72,6 @@ impl App for MteToolBox {
                             todo!()
                         }
                     });
-                    /**/
                 });
             });
         //
@@ -122,6 +123,11 @@ impl App for MteToolBox {
                 ui.heading("Centered Header");
             });
             //
+            /**/
+            if MyButton::new("Save").show(ui) {
+                todo!()
+            }
+            /**/
             ui.label(format!("{product_mte}"));
             Window::new("Stock")
                 .resizable(true)
